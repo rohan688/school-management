@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.test{
+  border: transparent
+  ;
+}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +39,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+table,td,tr,th{
+  border:solid 1px black
+}
+.tablediv{
+  margin-left:32%;
+  margin-top: 50px;
+}
+table{
+  width: 600px;
+}
+th{
+  background-color: skyblue;
+  color:black;
+}
+.login>input{
+  margin-top: 20px;
+  height: 20px;
+}
+.login{
+  width:20%;
+  border: solid 1px gray;
+  margin: auto;
+  margin-top: 200px;
+  background-color: rgb(232, 210, 210);
+  border-radius: 10px;
+}
+.login>button{
+  background-color: coral;
+  color: black;
+  font-weight: 400;
+
 }
