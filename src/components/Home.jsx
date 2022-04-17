@@ -9,7 +9,7 @@ export const Home = ()=>{
     axios.get(`https://schooldata1.herokuapp.com/teachers?_page=${page}&_limit=2`).then((res)=>{
         setdb(res.data)
       }) 
-   })
+   },[])
 
    const handlesorthtl = ()=>{
        axios.get("https://schooldata1.herokuapp.com/teachers").then((res)=>{
