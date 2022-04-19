@@ -15,14 +15,14 @@ export const addteacherFailure = ()=>({
     type:ADDTEACHER_FAILURE,
 })
 
-export const addteacher = ({name,gender, age})=>(dispatch)=>{
+export const addteacher = ({name,gender,age})=>(dispatch)=>{
     dispatch(addteacherLoading())
         fetch(`https://schooldata1.herokuapp.com/teachers`,{
           method:"post",
           body:JSON.stringify({
               "name":name,
               "gender":gender,
-              "gender":age
+              "age":age
             }),
           headers:{
               "Content-Type":"application/json"

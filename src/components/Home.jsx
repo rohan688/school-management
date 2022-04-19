@@ -28,6 +28,18 @@ export const Home = ()=>{
         }))
     })
 }
+const handleall = ()=>{
+    axios.get(`https://schooldata1.herokuapp.com/teachers`).then((res)=>{
+        setdb(res.data)
+      }) 
+}
+const handlefiltermen = ()=>{
+    axios.get('https://schooldata1.herokuapp.com/teachers').then((res)=>{setdb(res.data.filter((e)=>{if (e.gender==="Male") {return true} else{return false}}))})
+}
+const handlefilterwomen = ()=>{
+    axios.get('https://schooldata1.herokuapp.com/teachers').then((res)=>{setdb(res.data.filter((e)=>{if (e.gender==="Female") {return true} else{return false}}))})
+}
+
     return (
         <div>
           <button onClick={()=>{navigate("/teachers")}}>ADD TEACHERS</button><br></br>
@@ -35,7 +47,9 @@ export const Home = ()=>{
           <button onClick={handlesorthtl}>High To Low</button>
           <button onClick={handlesortlth}>Low To High</button>
           <h3>Filter by gender</h3>
-          
+          <button onClick={handlefiltermen}>MEN</button>
+          <button onClick={handlefilterwomen}>WOMEN</button>
+          <button onClick={handleall}>ALL</button>
 
           <div className="tablediv">
           <table>
