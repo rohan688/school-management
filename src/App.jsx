@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Addteacher } from './components/Addteacher';
 import { Home } from './components/Home';
 import { Login } from './components/Login';
 import { Signup } from './components/register';
@@ -21,6 +22,7 @@ function App() {
         }/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Signup/>}/>
+        <Route path='/teachers' element={<Addteacher/>}/>
       </Routes>
     </div>
   );

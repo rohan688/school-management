@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 
 export const Home = ()=>{
    const [db,setdb]=useState([]);
    const [page,setpage]=useState(1);
+   const navigate=useNavigate()
    useEffect(()=>{
-    axios.get(`https://schooldata1.herokuapp.com/teachers?_page=${page}&_limit=2`).then((res)=>{
+    axios.get(`https://schooldata1.herokuapp.com/teachers`).then((res)=>{
         setdb(res.data)
       }) 
    },[])
@@ -28,10 +30,13 @@ export const Home = ()=>{
 }
     return (
         <div>
-          <button>ADD TEACHERS</button><br></br>
+          <button onClick={()=>{navigate("/teachers")}}>ADD TEACHERS</button><br></br>
           <h3>SORT BY AGE</h3>
           <button onClick={handlesorthtl}>High To Low</button>
           <button onClick={handlesortlth}>Low To High</button>
+          <h3>Filter by gender</h3>
+          
+
           <div className="tablediv">
           <table>
               <thead>
